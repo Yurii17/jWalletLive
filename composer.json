@@ -1,0 +1,10 @@
+{
+    "require-dev": {
+        "allure-framework/allure-codeception": ">=1.1.0",
+        "consolidation/robo": "^1.0.0"
+    },
+    "require": {
+        "flow/jsonpath": "^0.4.0",
+        "fzaninotto/faker": "^1.8"
+    }
+}
