@@ -20,7 +20,6 @@ env:
       config:
         WebDriver:
           url:  https://jwallet.cc
-          port: 9515
           browser: chrome
           window_size: false
           capabilities:
@@ -31,7 +30,6 @@ env:
       config:
         WebDriver:
           url:  https://jwallet.cc
-          port: 9515
           browser: chrome
           window_size: false
           capabilities:

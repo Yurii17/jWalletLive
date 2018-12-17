@@ -430,6 +430,21 @@ class jWalletLiveCest
         $I->click(page::$EXIT);
         is_null($calculated) ? $scenario->skip("Calculated value is: $calculated") : true;
     }
+    /**
+     * @param AcceptanceTester $I
+     * @param \Codeception\Scenario $scenario
+     * @return bool
+     * @throws Exception
+     */
+    public function SetAllLinksField(AcceptanceTester $I)
+    {
+        $I->Login($I);
+        $links = [page::$jWallet, page::$PayPal];
+        $fillField = [page::$jWalletField, page::$PayPalFiled];
+        $grab = [page::$jWalletField2, page::$PayPalFiled2];
+        $all_links = array_unique (array_merge($links, $fillField, $grab ));
+
+    }
 
 
 
