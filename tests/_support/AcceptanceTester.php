@@ -22,6 +22,8 @@ class AcceptanceTester extends \Codeception\Actor
 {
     use _generated\AcceptanceTesterActions;
 
+    public $user = ['email' => 'test4@test.jwallet', 'password' => 'Pw84584df5'];
+
     public function setOfActions2($link)
     {
         $I = $this;
@@ -31,20 +33,32 @@ class AcceptanceTester extends \Codeception\Actor
         $I->seeInCurrentUrl($link['url']);
         $I->click(page::$Logo);
     }
+
     /**
-     * @param AcceptanceTester $I
+     * @param $email
+     * @param $password
      * @throws Exception
      */
-    public function Login(AcceptanceTester $I)
+    public function Login($email, $password)
     {
         $I = $this;
+        /*
+        if ($I->loadSessionSnapshot('login'))  {
+            $I->grabCookie('auth._token.local');
+            return;
+        }
+        */
         $I->click(page::$LoginBtn);
         $I->waitForElementVisible(page::$LoginEmail, 100);
-        $I->fillField(page::$LoginEmail, 'test4@test.jwallet');
-        $I->fillField(page::$LoginPassword, 'Pw84584df5');
+        $I->fillField(page::$LoginEmail, $email);
+        $I->fillField(page::$LoginPassword, $password);
         $I->click(page::$LoginBtnModal);
         $I->wait(5);
+        /*$I->saveSessionSnapshot('login');
+        $I->grabCookie('auth._token.local');
+        */
     }
+
 
 
 }

@@ -17,7 +17,7 @@ class jWalletLiveCest
      */
     public function FieldjWallet (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$jWallet);
@@ -37,14 +37,14 @@ class jWalletLiveCest
      */
     public function FieldPayPal (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$PayPal);
         $I->wait(2);
-        $I->fillField(page::$PayPalFiled, 100);
-        $price = $I->grabValueFrom(page::$PayPalFiled);
-        $calculated = $I->grabValueFrom(page::$PayPalFiled2);
+        $I->fillField(page::$PayPalField, 100);
+        $price = $I->grabValueFrom(page::$PayPalField);
+        $calculated = $I->grabValueFrom(page::$PayPalField2);
         $I->assertNotSame($price, $calculated);
         $I->click(page::$EXIT);
         is_null($calculated) ? $scenario->skip("Calculated value is: $calculated") : true;
@@ -57,7 +57,7 @@ class jWalletLiveCest
      */
     public function FieldEXMO (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$EXMO);
@@ -78,7 +78,7 @@ class jWalletLiveCest
      */
     public function FieldLiveCoin (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$LiveCoin);
@@ -98,7 +98,7 @@ class jWalletLiveCest
      */
     public function WireTransferModal (AcceptanceTester $I)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$WireTransfer);
@@ -117,7 +117,7 @@ class jWalletLiveCest
      */
     public function FieldBitCoin (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$BitCoin);
@@ -138,7 +138,7 @@ class jWalletLiveCest
      */
     public function FieldLiteCoin (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$LiteCoin);
@@ -158,7 +158,7 @@ class jWalletLiveCest
      */
     public function FieldDash (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$Dash);
@@ -178,7 +178,7 @@ class jWalletLiveCest
      */
     public function FieldEth (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$Eth);
@@ -198,7 +198,7 @@ class jWalletLiveCest
      */
     public function FieldPaxum (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$Paxum);
@@ -218,7 +218,7 @@ class jWalletLiveCest
      */
     public function FieldADV (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$Adv);
@@ -238,7 +238,7 @@ class jWalletLiveCest
      */
     public function FieldCapitalist (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$Capitalist);
@@ -258,7 +258,7 @@ class jWalletLiveCest
      */
     public function FieldWebMoney (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$WebMoney);
@@ -278,7 +278,7 @@ class jWalletLiveCest
      */
     public function FieldEpayments (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$EPM);
@@ -298,7 +298,7 @@ class jWalletLiveCest
      */
     public function FieldPerfectMoney (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$PerfectMoney);
@@ -318,7 +318,7 @@ class jWalletLiveCest
      */
     public function FieldPerfectMoney2 (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$PerfectMoney2);
@@ -338,7 +338,7 @@ class jWalletLiveCest
      */
     public function FieldYandex (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$YandexMoney);
@@ -358,7 +358,7 @@ class jWalletLiveCest
      */
     public function FieldQiwi (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$Qiwi);
@@ -378,7 +378,7 @@ class jWalletLiveCest
      */
     public function FieldRUB (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$RUB);
@@ -398,7 +398,7 @@ class jWalletLiveCest
      */
     public function FieldRUB2 (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$RUB2);
@@ -418,7 +418,7 @@ class jWalletLiveCest
      */
     public function FieldUAH (AcceptanceTester $I, \Codeception\Scenario $scenario)
     {
-        $I->Login($I);
+        $I->Login($I->user['email'], $I->user['password']);
         $I->click(page::$MoneyTransactionLink);
         $I->wait(3);
         $I->click(page::$UAH);
@@ -430,22 +430,6 @@ class jWalletLiveCest
         $I->click(page::$EXIT);
         is_null($calculated) ? $scenario->skip("Calculated value is: $calculated") : true;
     }
-    /**
-     * @param AcceptanceTester $I
-     * @param \Codeception\Scenario $scenario
-     * @return bool
-     * @throws Exception
-     */
-    public function SetAllLinksField(AcceptanceTester $I)
-    {
-        $I->Login($I);
-        $links = [page::$jWallet, page::$PayPal];
-        $fillField = [page::$jWalletField, page::$PayPalFiled];
-        $grab = [page::$jWalletField2, page::$PayPalFiled2];
-        $all_links = array_unique (array_merge($links, $fillField, $grab ));
-
-    }
-
 
 
 

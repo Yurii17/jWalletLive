@@ -288,8 +288,8 @@ class jWalletLive
     public static $jWalletField2 = 'div:nth-child(5) > div > input';
 
     public static $PayPal = 'div:nth-child(2) > div > div.row > div:nth-child(2)';
-    public static $PayPalFiled = 'div:nth-child(5) > div > input';
-    public static $PayPalFiled2 = 'div:nth-child(7) > div > input';
+    public static $PayPalField = 'div:nth-child(5) > div > input';
+    public static $PayPalField2 = 'div:nth-child(7) > div > input';
 
     public static $EXMO = 'div:nth-child(2) > div > div.row > div:nth-child(3) > a';
     public static $EXMOField = 'div:nth-child(1) > div > input';
@@ -367,7 +367,7 @@ class jWalletLive
     public static $UAHField = 'div:nth-child(2) > form > div:nth-child(1) > div:nth-child(4) > div > input';
     public static $UAHField2 = 'div:nth-child(6) > div > input';
 
-
+    public static $UserBTN = '#drop-user';
 
 
 
